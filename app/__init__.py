@@ -14,7 +14,8 @@ def create_app():
     
     app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
     app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get("SQLALCHEMY_DATABASE_URI")
-    
+#    app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get("NEON_DATABASE_URI")
+
     db.init_app(app)
     migrate.init_app(app, db)
     print("got here 3")
