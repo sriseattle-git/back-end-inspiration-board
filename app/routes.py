@@ -31,8 +31,9 @@ def create_board():
 
 @boards_bp.route("", methods=["GET"])
 def list_all_boards():
+    print("list_all_boards(): Start")
     boards = Board.query.all()
-
+    print("list_all_boards(): After DB query")
     boards_response = []
     for board in boards:
         boards_response.append(
